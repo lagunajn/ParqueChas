@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parque Chas — Menú</title>
+  <meta name="description" content="Menú de Parque Chas: ensaladas, entrantes, pizzas, carnes, postres y bebidas." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Estilos extra SOLO para esta página (puedes moverlos a styles.css si quieres) -->
+  <style>
+    .menu-wrap{ padding: 40px 0; }
+    .menu-top{
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:14px; flex-wrap:wrap; margin-bottom:16px;
+    }
+    .menu-top h1{ margin:0; font-size:28px; letter-spacing:.06em; }
+    .badge{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 14px; border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      max-width: 100%;
+    }
+    .badge strong{ letter-spacing:.06em; }
+    .menu-grid{
+      display:grid; gap:14px;
+      grid-template-columns: 1fr 1fr;
+      align-items:start;
+    }
+    @media (max-width: 900px){ .menu-grid{ grid-template-columns:1fr; } }
+
+    .menu-section{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .menu-section header{
+      padding:14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+    }
+    .menu-section h2{
+      margin:0;
+      font-size:15px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .menu-section .sub{
+      margin:0;
+      font-size:12px;
+      opacity:.85;
+    }
+    .menu-list{ padding: 10px 16px 14px; }
+    .item{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:10px;
+      padding:10px 0;
+      border-bottom: 1px dashed rgba(255,255,255,.10);
+    }
+    .item:last-child{ border-bottom:none; }
+    .name{ font-weight:600; }
+    .desc{ margin-top:3px; font-size:12px; opacity:.85; }
+    .price{ white-space:nowrap; font-weight:700; letter-spacing:.02em; }
+    .note{
+      padding:12px 16px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      font-size:12px;
+      opacity:.9;
+    }
+    .full{ grid-column: 1 / -1; }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+        <span class="brand-mark">Parque Chas</span>
+        <span class="brand-sub">Marbella · Cocina Argentina</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="index.html">El Restaurante</a>
+        <a class="nav-link active" href="menu.html">Menú</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="menu-wrap">
+    <div class="container">
+      <div class="menu-top">
+        <div>
+          <p class="kicker" style="margin:0 0 6px;">Carta</p>
+          <h1>Menú</h1>
+        </div>
+
+        <div class="actions">
+          <div class="badge" role="note" aria-label="Dirección">
+            <strong>Ven a vernos</strong>
+            <span class="muted">Av. Arias de Velasco 41, Marbella</span>
+          </div>
+          <button class="btn btn-ghost" onclick="window.print()">Imprimir</button>
+        </div>
+      </div>
+
+      <div class="menu-grid">
+
+        <!-- ENSALADAS -->
+        <section class="menu-section">
+          <header>
+            <h2>Ensaladas</h2>
+            <p class="sub muted">Frescas y clásicas</p>
+          </header>
+          <div class="menu-list">
+            <div class="item">
+              <div>
+                <div class="name">Mixta</div>
+                <div class="desc muted">(Lechuga, tomate, maíz, zanahoria y cebolla)</div>
+              </div>
+              <div class="price">8.50€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Tomate aliñado</div>
+              </div>
+              <div class="price">7.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Ensalada burrata</div>
+                <div class="desc muted">(Burrata, tomate y pesto)</div>
+              </div>
+              <div class="price">11.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Ensalada de rúcula</div>
+                <div class="desc muted">(Cherry, tomatitos secos y láminas de parmesano)</div>
+              </div>
+              <div class="price">11.00€</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ENTRANTES -->
+        <section class="menu-section">
+          <header>
+            <h2>Entrantes</h2>
+            <p class="sub muted">Para compartir</p>
+          </header>
+          <div class="menu-list">
+            <div class="item">
+              <div class="name">El clásico chorizo criollo</div>
+              <div class="price">3.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Morcilla criolla de cebolla</div>
+              <div class="price">3.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Croquetas de jamón</div>
+              <div class="price">7.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Croquetas de cocido</div>
+              <div class="price">7.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Empanada criolla de ternera</div>
+              <div class="price">3.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Empanada criolla de jamón y queso</div>
+              <div class="price">3.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Empanada criolla de espinacas</div>
+              <div class="price">3.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Gambas al pil pil</div>
+              <div class="price">12.00€</div>
+            </div>
+            <div class="item">
+              <div class="name">Provoleta</div>
+              <div class="price">10.50€</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PIZZAS -->
+        <section class="menu-section">
+          <header>
+            <h2>Pizzas</h2>
+            <p class="sub muted">Estilo clásico</p>
+          </header>
+          <div class="menu-list">
+            <div class="item">
+              <div>
+                <div class="name">Margarita</div>
+                <div class="desc muted">(Salsa de tomate y mozzarella)</div>
+              </div>
+              <div class="price">8.50€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Napolitana</div>
+                <div class="desc muted">(Salsa de tomate, mozzarella, tomate natural y ajo)</div>
+              </div>
+              <div class="price">11.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Vesubio</div>
+                <div class="desc muted">(Salsa de tomate, mozzarella y jamón york)</div>
+              </div>
+              <div class="price">11.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Caprichosa</div>
+                <div class="desc muted">(Salsa de tomate, mozzarella, jamón york y champiñones)</div>
+              </div>
+              <div class="price">11.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Fugazzeta</div>
+                <div class="desc muted">(Mozzarella y cebolla)</div>
+              </div>
+              <div class="price">11.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Cuatro quesos</div>
+                <div class="desc muted">(Mozzarella, queso azul, cheddar y parmesano)</div>
+              </div>
+              <div class="price">12.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Blanca</div>
+                <div class="desc muted">(Mozzarella, bacon, cebolla y nata)</div>
+              </div>
+              <div class="price">12.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Campesina</div>
+                <div class="desc muted">(Salsa de tomate, mozzarella, jamón serrano, rúcula, cherry y parmesano)</div>
+              </div>
+              <div class="price">14.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Pepperoni</div>
+                <div class="desc muted">(Salsa de tomate, mozzarella y pepperoni picante)</div>
+              </div>
+              <div class="price">12.00€</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CARNES -->
+        <section class="menu-section">
+          <header>
+            <h2>Carnes</h2>
+            <p class="sub muted">Parrilla y clásicos</p>
+          </header>
+          <div class="menu-list">
+            <div class="item">
+              <div>
+                <div class="name">Milanesa (ternera o pollo)</div>
+                <div class="desc muted">(Filete empanado clásico)</div>
+              </div>
+              <div class="price"></div>
+            </div>
+
+            <div class="item">
+              <div class="name">— Simple</div>
+              <div class="price">15.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">— Napolitana</div>
+                <div class="desc muted">(Salsa de tomate, jamón york y mozzarella)</div>
+              </div>
+              <div class="price">17.00€</div>
+            </div>
+
+            <div class="item">
+              <div class="name">— Mozzarella y cebolla</div>
+              <div class="price">16.00€</div>
+            </div>
+          </div>
+          <div class="note muted">Servidas con patatas fritas o ensalada</div>
+        </section>
+
+        <!-- PARRILLA / PLATOS (full width) -->
+        <section class="menu-section full">
+          <header>
+            <h2>Platos</h2>
+            <p class="sub muted">Servidos con patatas fritas o ensalada</p>
+          </header>
+          <div class="menu-list">
+            <div class="item">
+              <div class="name">Entraña</div>
+              <div class="price">16.00€</div>
+            </div>
+            <div class="item">
+              <div class="name">Asado de tira</div>
+              <div class="price">16.00€</div>
+            </div>
+            <div class="item">
+              <div class="name">Costillas de cerdo</div>
+              <div class="price">13.00€</div>
+            </div>
+            <div class="item">
+              <div class="name">Muslos de pollo al limón</div>
+              <div class="price">12.00€</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Hamburguesa de ternera 200gr</div>
+                <div class="desc muted">(Lechuga, tomate, cheddar, bacon)</div>
+              </div>
+              <div class="price">12.50€</div>
+            </div>
+
+            <div class="item">
+              <div class="name">Lasaña de ternera “de la Nonna”</div>
+              <div class="price">15.00€</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- POSTRES -->
+        <section class="menu-section">
+          <header>
+            <h2>Postres</h2>
+            <p class="sub muted">Clásicos</p>
+          </header>
+          <div class="menu-list">
+            <div class="item">
+              <div class="name">Flan con nata</div>
+              <div class="price">6.00€</div>
+            </div>
+            <div class="item">
+              <div class="name">Mousse de chocolate con corazón de dulce de leche</div>
+              <div class="price">6.00€</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BEBIDAS -->
+        <section class="menu-section">
+          <header>
+            <h2>Bebidas</h2>
+            <p class="sub muted">Bar</p>
+          </header>
+          <div class="menu-list">
+            <div class="item">
+              <div class="name">Caña</div>
+              <div class="price">1.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Copa</div>
+              <div class="price">2.00€</div>
+            </div>
+            <div class="item">
+              <div class="name">Caña doble</div>
+              <div class="price">3.00€</div>
+            </div>
+            <div class="item">
+              <div class="name">Botellín</div>
+              <div class="price">2.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Cerveza 0.0</div>
+              <div class="price">2.50€</div>
+            </div>
+            <div class="item">
+              <div>
+                <div class="name">Copa vino de la casa</div>
+                <div class="desc muted">(Tinto, blanco y rosado)</div>
+              </div>
+              <div class="price">2.75€</div>
+            </div>
+
+            <div class="item">
+              <div class="name">Refrescos</div>
+              <div class="price">2.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Agua</div>
+              <div class="price">2.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Agua con gas</div>
+              <div class="price">2.50€</div>
+            </div>
+            <div class="item">
+              <div class="name">Café e infusiones</div>
+              <div class="price">2.00€</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> Parque Chas · Marbella</p>
+      <p class="muted">Precios sujetos a cambios.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
